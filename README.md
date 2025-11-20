@@ -1,4 +1,4 @@
-# ASME-IAM3D-25-26
+# ASME IAM3D 25-26
 Control system from the Iam3D 2025-26 rover.
 
 current tasks:
