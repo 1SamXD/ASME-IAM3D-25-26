@@ -1,5 +1,11 @@
 # ASME-IAM3D-25-26
-Control system from Iam3D 2025-26 rover.
+Control system from the Iam3D 2025-26 rover.
+
 current tasks:
-classes: motor driver, controller
+-classes: motor driver, controller
 test classes
+
+completed tasks:
+-PlatformIO creation
+-GitHub repo for the rover
+-simple controls test
