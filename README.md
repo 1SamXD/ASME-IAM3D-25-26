@@ -3,7 +3,8 @@ Control system from the Iam3D 2025-26 rover.
 
 current tasks:
 -classes: motor driver, controller
-test classes
+-test classes
+-create ino version
 
 completed tasks:
 -PlatformIO creation
