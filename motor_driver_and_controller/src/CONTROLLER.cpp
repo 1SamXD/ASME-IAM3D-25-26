@@ -62,4 +62,6 @@ void CONTROLLER::update() {
     //triggers
     l2 = PS4.L2Value();
     r2 = PS4.R2Value();
+
+    Serial.println("Controller state updated.");
 }

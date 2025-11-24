@@ -34,6 +34,7 @@ void setup() {
 
 void loop() {
   ps4.update();
+  Serial.printf("LX: %d, LY: %d\n", ps4.lx, ps4.ly);
   motorDriver.drive(ps4.ly, ps4.lx);
 
   // int leftPower = ps4.ly + ps4.lx;

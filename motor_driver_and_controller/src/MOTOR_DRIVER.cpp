@@ -15,6 +15,7 @@ void MOTOR_DRIVER::begin() {
 
 void MOTOR_DRIVER::drive(int ly, int lx) {
     int l, r = get_pwm(ly, lx);
+    Serial.printf("Left PWM: %d, Right PWM: %d\n", l, r);
     move_motors(l,1);
     move_motors(r,0);
 }
