@@ -6,7 +6,8 @@ CONTROLLER::CONTROLLER() {
 }  
 
 void CONTROLLER::begin() {
-    PS4.begin();
+    PS4.begin("B4:2D:9B:12:4B:00");//("DC:AF:68:99:84:5F"); B42D9B124B00
+
     if (!PS4.isConnected()) {
         Serial.println("Waiting for PS4 controller connection...");
         while (!PS4.isConnected()) {

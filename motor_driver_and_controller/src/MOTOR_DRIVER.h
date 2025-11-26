@@ -6,7 +6,7 @@ class MOTOR_DRIVER {
         MOTOR_DRIVER(int m1_1, int m1_2, int m2_1, int m2_2, int en1, int en2);
         void begin();
         void drive(int ly, int lx);
-        int get_pwm(int ly, int lx);
+        void get_pwm(int ly, int lx, int &left_pwm_out, int &right_pwm_out);
         void move_motors(int pwm, bool m);
         void stop();
 

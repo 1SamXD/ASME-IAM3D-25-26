@@ -28,8 +28,10 @@ void setup() {
 
   //begin controller
   ps4.begin();
+  motorDriver.begin();
 
   Serial.println("Ready.");
+  delay(5000);
 }
 
 void loop() {
@@ -49,7 +51,7 @@ void loop() {
   // driveLeftMotor(leftPWM);
   // driveRightMotor(rightPWM);
 
-  delay(20);
+  //delay();
 }
 
 // void driveLeftMotor(int pwm) {

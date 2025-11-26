@@ -14,24 +14,25 @@ void MOTOR_DRIVER::begin() {
 }
 
 void MOTOR_DRIVER::drive(int ly, int lx) {
-    int l, r = get_pwm(ly, lx);
-    Serial.printf("Left PWM: %d, Right PWM: %d\n", l, r);
-    move_motors(l,1);
-    move_motors(r,0);
+    int left_pwm, right_pwm;
+    get_pwm(ly, lx, left_pwm, right_pwm); 
+
+    Serial.printf("Left PWM: %d, Right PWM: %d\n", left_pwm, right_pwm);
+    
+    move_motors(left_pwm, 1);  
+    move_motors(right_pwm, 0);
 }
 
-int MOTOR_DRIVER::get_pwm(int ly, int lx) {
+void MOTOR_DRIVER::get_pwm(int ly, int lx, int &left_pwm_out, int &right_pwm_out) {
     int leftPower = ly + lx;
     int rightPower = ly - lx;
 
-    leftPower = constrain(leftPower, -128, 127);
-    rightPower = constrain(rightPower, -128, 127);
+    leftPower = constrain(leftPower, -127, 127);
+    rightPower = constrain(rightPower, -127, 127);
 
-    int leftPWM = map(leftPower, -128, 127, 0, 255);
-    int rightPWM = map(rightPower, -128, 127, 0, 255);
-    return leftPWM, rightPWM;
+    left_pwm_out = leftPower;
+    right_pwm_out = rightPower;
 }
-
 void MOTOR_DRIVER::move_motors(int pwm, bool m) {
     if(m) {
         if (pwm > 0) {
