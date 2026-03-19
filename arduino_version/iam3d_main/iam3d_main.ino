@@ -7,12 +7,12 @@
 // const int deadzone = 10;
 
 // //motorpins
-int ENApin = 34; //motor 1 speed
+int ENApin = 35; //motor 1 speed
 int IN1pin = 33; //motor 1 dir1
 int IN2pin = 26; //motor 1 dir2
 int IN3pin = 32; //motor 2 dir1
 int IN4pin = 25; //motor 2 dir2
-int ENBpin = 32; //motor 2 speed
+int ENBpin = 34; //motor 2 speed
 //MOTOR_DRIVER::MOTOR_DRIVER(int in1, int in2, int in3, int in4, int ena, int enb)
 
 
