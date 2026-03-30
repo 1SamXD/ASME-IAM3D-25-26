@@ -6,7 +6,7 @@ CONTROLLER::CONTROLLER() {
 }  
 
 void CONTROLLER::begin() {
-    PS4.begin("B4:2D:9B:12:4B:00");//("DC:AF:68:99:84:5F"); B42D9B124B00
+    PS4.begin("e8:61:7e:25:30:5a");//("DC:AF:68:99:84:5F"); B42D9B124B00
 
     if (!PS4.isConnected()) {
         Serial.println("Waiting for PS4 controller connection...");
@@ -14,6 +14,8 @@ void CONTROLLER::begin() {
             delay(100);
         }
     }
+
+    delay(500);
     set_deadzone();
     Serial.println("PS4 Controller connected.");
 }

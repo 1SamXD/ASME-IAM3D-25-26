@@ -27,8 +27,8 @@ void MOTOR_DRIVER::get_pwm(int ly, int lx, int &left_pwm_out, int &right_pwm_out
     int leftPower = ly + lx;
     int rightPower = ly - lx;
 
-    leftPower = constrain(leftPower, -127, 127);
-    rightPower = constrain(rightPower, -127, 127);
+    leftPower = constrain(leftPower, -255, 255);
+    rightPower = constrain(rightPower, -255, 255);
 
     left_pwm_out = leftPower;
     right_pwm_out = rightPower;

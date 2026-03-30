@@ -3,7 +3,7 @@
 
 class MOTOR_DRIVER {
     public:
-         MOTOR_DRIVER(int in1, int in2, int in3, int in4, int ena, int enb);
+        MOTOR_DRIVER(int in1, int in2, int in3, int in4, int ena, int enb);
         void begin();
         void drive(int ly, int lx);
         void get_pwm(int ly, int lx, int &left_pwm_out, int &right_pwm_out);
@@ -11,12 +11,12 @@ class MOTOR_DRIVER {
         void stop();
 
     private:
-        int m1_1;
-        int m1_2;
-        int m2_1;
-        int m2_2;
-        int en1;
-        int en2;
+        int in1;
+        int in2;
+        int in3;
+        int in4;
+        int ena;
+        int enb;
 };
 
 #endif // MOTOR_DRIVER_H

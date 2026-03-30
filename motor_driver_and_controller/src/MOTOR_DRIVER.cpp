@@ -30,8 +30,11 @@ void MOTOR_DRIVER::get_pwm(int ly, int lx, int &left_pwm_out, int &right_pwm_out
     leftPower = constrain(leftPower, -127, 127);
     rightPower = constrain(rightPower, -127, 127);
 
-    left_pwm_out = leftPower;
-    right_pwm_out = rightPower;
+    int leftPWM = map(leftPower, -127, 127, 0, 255);
+    int rightPWM = map(rightPower, -127, 127, 0, 255);
+
+    left_pwm_out = leftPWM;
+    right_pwm_out = rightPWM;
 }
 void MOTOR_DRIVER::move_motors(int pwm, bool m) {
     if(m) {
