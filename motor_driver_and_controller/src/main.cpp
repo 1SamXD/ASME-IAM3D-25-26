@@ -22,7 +22,7 @@ MOTOR_DRIVER drivetrain(IN1pin, IN2pin, IN3pin, IN4pin, ENApin, ENBpin);
 
 //servo pin
 int servoPin = 2;
-Servo servo;
+Servo dumper;
 
 //dumper logic variables
 int value = 1; // integer to track input of Square for Dumping mechanism
@@ -37,7 +37,7 @@ void setup() {
   ps4.begin();
   drivetrain.begin();
 
-  servo.attach(servoPin);
+  dumper.attach(servoPin);
 
   Serial.println("Ready.");
   delay(5000);
@@ -52,10 +52,10 @@ void loop() {
     value = value + 1;
     check = 1;
     if (value % 2 == 0) {
-      servo.write(150);
+      dumper.write(150);
     }
     else {
-      servo.write(0);
+      dumper.write(0);
     }
   }
 
