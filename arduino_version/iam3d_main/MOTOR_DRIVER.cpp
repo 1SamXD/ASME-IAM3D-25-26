@@ -17,10 +17,13 @@ void MOTOR_DRIVER::drive(int ly, int lx) {
     int left_pwm, right_pwm;
     get_pwm(ly, lx, left_pwm, right_pwm); 
 
-    Serial.printf("Left PWM: %d, Right PWM: %d\n", left_pwm, right_pwm);
+    ema_left = alpha * left_pwm + (1 - alpha) * ema_left;
+    ema_right = alpha * right_pwm + (1 - alpha) * ema_right;
+
+    Serial.printf("Left PWM: %d, Right PWM: %d\n", ema_left, ema_right);
     
-    move_motors(left_pwm, 1);  
-    move_motors(right_pwm, 0);
+    move_motors(ema_left, 1);  
+    move_motors(ema_right, 0);
 }
 
 void MOTOR_DRIVER::get_pwm(int ly, int lx, int &left_pwm_out, int &right_pwm_out) {

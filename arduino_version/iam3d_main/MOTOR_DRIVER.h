@@ -17,6 +17,10 @@ class MOTOR_DRIVER {
         int in4;
         int ena;
         int enb;
+
+        float ema_right = 0;
+        float ema_left = 0;
+        float alpha = 0.5;
 };
 
 #endif // MOTOR_DRIVER_H
